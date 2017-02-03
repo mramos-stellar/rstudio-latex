@@ -24,6 +24,8 @@ RUN Rscript -e "extrafont::font_import()"
 USER rstudio
 
 ADD dot.latexmkrc /home/rstudio/.latexmkrc
+RUN chown rstudio:rstudio /home/rstudio/.latexmkrc
 ADD article.Rmd /home/rstudio/
+RUN chown rstudio:rstudio /home/rstudio/article.Rmd
 
 CMD ["/init"]  
