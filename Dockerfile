@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt install  -y equivs
 RUN wget http://www.tug.org/texlive/files/debian-equivs-2016-ex.txt
 RUN equivs-build debian-equivs-2016-ex.txt
-RUN dpkg -i texlive-local_2016-1_all.deb\mends texlive-full\
+RUN dpkg -i texlive-local_2016-1_all.deb\
     && apt-get clean
 # Change environment to Japanese(Character and DateTime)
 ENV LANG ja_JP.UTF-8
