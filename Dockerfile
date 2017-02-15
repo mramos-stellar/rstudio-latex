@@ -13,7 +13,11 @@ RUN apt-get update && apt-get upgrade -y \
             https://raw.githubusercontent.com/rchurchley/docker-texlive/latest/installation.profile \
     && ./install/install-tl --profile /install/installation.profile \
     && rm -R /install && apt-get clean    
-    
+RUN apt-get install -y equivs
+RUN wget http://www.tug.org/texlive/files/debian-equivs-2016-ex.txt
+RUN equivs-build debian-equivs-2016-ex.txt
+RUN dpkg -i texlive-local_2016-1_all.deb \
+    && apt-get clean    
 # Change environment to Japanese(Character and DateTime)
 ENV LANG ja_JP.UTF-8
 ENV LC_ALL ja_JP.UTF-8
