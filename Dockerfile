@@ -17,6 +17,7 @@ RUN apt-get install -y equivs
 RUN wget http://www.tug.org/texlive/files/debian-equivs-2016-ex.txt
 RUN equivs-build debian-equivs-2016-ex.txt
 RUN apt-get remove -y texlive-base
+RUN apt-get install -y freeglut3
 RUN dpkg -i texlive-local_2016-2_all.deb \
     && apt-get clean    
 # Change environment to Japanese(Character and DateTime)
