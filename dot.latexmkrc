@@ -1,7 +1,7 @@
 $latex  = 'uplatex -synctex=1';
 $bibtex = 'upbibtex --kanji-internal=uptex';
 $dvipdf  = 'dvipdfmx %O -o %D %S';
-$makeindex = 'upmendex %O -U -o %D %S';
+$makeindex = 'upmendex %O -o %D %S';
 if ($^O eq 'darwin') {
     $pdf_previewer = 'open -a Preview';
 } elsif ($^O eq 'linux') {
