@@ -10,7 +10,7 @@ RUN apt-get update && apt-get upgrade -y \
     && bsdtar -xpC /install -f /texlive.iso \
     && rm /texlive.iso \
     && wget --directory-prefix=/install \
-            https://raw.githubusercontent.com/rchurchley/docker-texlive/latest/installation.profile \
+            https://raw.githubusercontent.com/kenjimyzk/rstudio-latex/master/installation.profile \
     && ./install/install-tl --profile /install/installation.profile \
     && rm -R /install && apt-get clean    
 RUN tlmgr update --self --all
