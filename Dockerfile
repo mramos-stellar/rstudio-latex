@@ -39,7 +39,6 @@ RUN Rscript -e "install.packages(c('Cairo', 'extrafont', 'tikzDevice'))"
 USER rstudio
 
 ADD dot.latexmkrc /home/rstudio/.latexmkrc
-ADD article.Rmd /home/rstudio/article.Rmd
 RUN Rscript -e "extrafont::font_import(prompt = FALSE)"
 
 USER root
